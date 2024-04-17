@@ -2,8 +2,6 @@
 
 A microblogging platform similar to X.
 
-## Notes
-
 ### Installation
 
 We will install Ruby on Rails in our local development environment.
