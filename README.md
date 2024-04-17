@@ -16,18 +16,6 @@ rails new myapp --database=postgresql
 cd myapp
 ```
 
-Create a Heroku app:
-
-```bash
-heroku create
-```
-
-Add the `x86_64-linux` and `ruby` platforms to `Gemfile.lock`.
-
-```bash
-bundle lock --add-platform x86_64-linux --add-platform ruby
-```
-
 Create a local database:
 
 ```bash
@@ -41,3 +29,34 @@ Rails 7 app without a Procfile executes the following command, but Heroku
 ```bash
 echo "web: bundle exec puma -C config/puma.rb" > Procfile
 ```
+
+## Deployment
+
+Create a Heroku app:
+
+```bash
+heroku create
+```
+
+Add the `x86_64-linux` and `ruby` platforms to `Gemfile.lock`.
+
+```bash
+bundle lock --add-platform x86_64-linux --add-platform ruby
+```
+
+```bash
+heroku addons:create heroku-postgresql:mini
+```
+
+Deploy:
+
+```bash
+git push heroku main
+```
+
+Migrate the database:
+```bash
+heroku run rake db:migrate
+```
+
+And you're done!
