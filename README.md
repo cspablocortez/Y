@@ -22,9 +22,9 @@ Create a local database:
 bin/rails db:create
 ```
 
-After removing default welcome page, create a `Procfile`. While deploying a
-Rails 7 app without a Procfile executes the following command, but Heroku
-[recommends](https://devcenter.heroku.com/articles/getting-started-with-rails7#create-a-procfile) explicitly declaring how to boot the server process.
+**After removing the default welcome page**, create a `Procfile`: 
+
+Deploying a Rails 7 app without a Procfile executes the following command, but Heroku [recommends](https://devcenter.heroku.com/articles/getting-started-with-rails7#create-a-procfile) explicitly declaring how to boot the server process.
 
 ```bash
 echo "web: bundle exec puma -C config/puma.rb" > Procfile
@@ -44,6 +44,8 @@ Add the `x86_64-linux` and `ruby` platforms to `Gemfile.lock`.
 bundle lock --add-platform x86_64-linux --add-platform ruby
 ```
 
+Create a database addon for your Heroku app:
+
 ```bash
 heroku addons:create heroku-postgresql:mini
 ```
@@ -59,4 +61,4 @@ Migrate the database:
 heroku run rake db:migrate
 ```
 
-And you're done!
+Done!
