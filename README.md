@@ -4,7 +4,29 @@ A microblogging platform similar to X.
 
 ## Notes
 
-[] Rails installation
+### Installation
+
+We will install Ruby on Rails in our local development environment.
+
+Go to the Github directory created by `Github Desktop`:
+
+```bash
+cd ~/Documents/Github
+```
+
+Install Rails:
+
+```bash
+gem install rails
+```
+
+Check installed version:
+
+```bash
+rails -v
+```
+
+### A New App
 
 Create a new Rails app:
 
@@ -30,7 +52,7 @@ Deploying a Rails 7 app without a Procfile executes the following command, but H
 echo "web: bundle exec puma -C config/puma.rb" > Procfile
 ```
 
-## Deployment
+### Deployment
 
 Create a Heroku app:
 
